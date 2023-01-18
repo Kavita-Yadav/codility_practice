@@ -1,3 +1,4 @@
+# time complexity O(n**n)
 def solution(A):
     # write your code in Python 3.6
     # list comprehension and list.count(element)
@@ -16,3 +17,17 @@ def solution(A):
       unpaired_item_list.append(i)
       
   return unpaired_item_list[0]
+
+
+OR
+
+# Best solution with time complexity O(N) or O(N*log(N)) 
+
+def solution(A):
+    N = len(A)
+    unpaired = 0
+    
+    for i in range(0, N):
+        unpaired = unpaired ^ A[i]
+    
+    return unpaired
